@@ -7,10 +7,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon server.js"
-  },
+  "start": "node index.js",
+  "dev": "npx nodemon index.js"
+}
+
+,
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",

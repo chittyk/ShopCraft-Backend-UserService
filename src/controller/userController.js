@@ -58,7 +58,7 @@ const verifyOtp = async (req, res) => {
       return res.status(400).json({ msg: "User already registered" });
 
     if (!bkOtp) return res.status(401).json("Otp expires !");
-
+    
     const isOtp = await bcrypt.compare(otp, bkOtp.otp);
     if (!isOtp) return res.status(401).json({msg:"wrong otp try again"});
 
@@ -126,7 +126,7 @@ const Login = async (req, res) => {
         _id: user._id,
         name: user.name,
         email: user.email,
-        
+        role:user.role || "admin"
       },
       token,
     });
